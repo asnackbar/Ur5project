@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/snook/catkin_ws/install/setup.sh
