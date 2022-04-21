@@ -1,0 +1,7 @@
+aExternal control ip
+local ip
+192.168.0.77
+:50002
+
+Robot ip
+192.168.0.100

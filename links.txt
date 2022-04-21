@@ -1,0 +1,4 @@
+1: https://ubuntu.com/tutorials/how-to-install-ubuntu-desktop-on-raspberry-pi-4#1-overview
+2: https://www.universal-robots.com/media/1800067/kms40_leaflet_en.pdf
+3: http://wiki.ros.org/Installation/Ubuntu
+4: https://linuxhint.com/install-ubuntu-desktop-20-04-lts-on-raspberry-pi-4/

@@ -1,0 +1,14 @@
+
+  fri explore the launch file 
+  tir urdf
+V man install meshlab,cadfor base
+  tir cad model griper 
+  ons add in robot model
+  tors create colision/planning scene (table wallsx4)
+  tors moveit move group tutorial to move to a pose in python(read how to create a new station)
+
+
+
+base messurements 
+
+baseplate

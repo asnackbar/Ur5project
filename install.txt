@@ -1,0 +1,82 @@
+commands to run in linux
+
+TERMINATOR
+		https://linuxways.net/centos/how-to-install-terminator-on-ubuntu-20-04/
+	1. sudo apt-get update
+	2. sudo apt install terminator
+
+SUBLIME TEXT
+		https://easycloudsupport.zendesk.com/hc/en-us/articles/360006586972-Install-Sublime-Text-3-in-Ubuntu-16-04-Higher-The-Official-Way
+	1. wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+	2. echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+	3. sudo apt-get update
+	4. sudo apt-get install sublime-text
+
+
+
+
+
+ROS NOETIC
+
+	1. http://wiki.ros.org/noetic/Installation/Ubuntu
+
+
+MOVEIT
+		https://moveit.ros.org/install/
+	1. sudo apt install ros-noetic-moveit
+	
+
+check network
+
+UR5
+
+	1. https://github.com/UniversalRobots/Universal_Robots_ROS_Driver
+
+# source global ros
+$ source /opt/ros/<your_ros_version>/setup.bash
+
+# create a catkin workspace
+$ mkdir -p catkin_ws/src && cd catkin_ws
+
+# clone the driver
+$ git clone https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git src/Universal_Robots_ROS_Driver
+
+# clone fork of the description. This is currently necessary, until the changes are merged upstream.
+$ git clone -b calibration_devel https://github.com/fmauch/universal_robot.git src/fmauch_universal_robot
+
+# install dependencies
+$ sudo apt update -qq
+$ rosdep update
+$ rosdep install --from-paths src --ignore-src -y
+
+# build the workspace
+$ catkin_make
+
+# activate the workspace (ie: source it)
+$ source devel/setup.bash
+
+
+cad find fan + fan holder for raspberry pi 
+overheating issue
+
+python in ros
+
+
+
+
+
+
+intel realsense
+
+
+
+
+force sensor by weiss
+
+
+
+cad holder intel
+
+cad gripper
+
+code 
