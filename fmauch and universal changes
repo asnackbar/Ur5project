@@ -1,0 +1,5 @@
+fmauch and universal changes
+
+In fmauch the .dae and .stl files was added to the ur5 meshes.
+
+changes was made in the file sothe .dae and .stl files was displayed in the correct spots in the rviz visual and colision
