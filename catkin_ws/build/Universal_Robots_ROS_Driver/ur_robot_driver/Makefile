@@ -112,6 +112,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -123,17 +134,6 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -228,66 +228,6 @@ run_tests_ur_robot_driver_rostest/fast:
 .PHONY : run_tests_ur_robot_driver_rostest/fast
 
 # Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/rule
-
-# Convenience name for target.
-_run_tests_ur_robot_driver: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/rule
-
-.PHONY : _run_tests_ur_robot_driver
-
-# fast build rule for target.
-_run_tests_ur_robot_driver/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/build
-.PHONY : _run_tests_ur_robot_driver/fast
-
-# Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/rule
-
-# Convenience name for target.
-run_tests_ur_robot_driver: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/rule
-
-.PHONY : run_tests_ur_robot_driver
-
-# fast build rule for target.
-run_tests_ur_robot_driver/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/build
-.PHONY : run_tests_ur_robot_driver/fast
-
-# Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/rule
-
-# Convenience name for target.
-dashboard_client: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/rule
-
-.PHONY : dashboard_client
-
-# fast build rule for target.
-dashboard_client/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/build
-.PHONY : dashboard_client/fast
-
-# Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/rule
-
-# Convenience name for target.
-ur_robot_driver_node: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/rule
-
-.PHONY : ur_robot_driver_node
-
-# fast build rule for target.
-ur_robot_driver_node/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build
-.PHONY : ur_robot_driver_node/fast
-
-# Convenience name for target.
 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/control_toolbox_generate_messages_lisp.dir/rule:
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/control_toolbox_generate_messages_lisp.dir/rule
 .PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/control_toolbox_generate_messages_lisp.dir/rule
@@ -301,6 +241,21 @@ control_toolbox_generate_messages_lisp: Universal_Robots_ROS_Driver/ur_robot_dri
 control_toolbox_generate_messages_lisp/fast:
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/control_toolbox_generate_messages_lisp.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/control_toolbox_generate_messages_lisp.dir/build
 .PHONY : control_toolbox_generate_messages_lisp/fast
+
+# Convenience name for target.
+Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/rule:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/rule
+.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+ur_msgs_generate_messages_cpp: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : ur_msgs_generate_messages_cpp
+
+# fast build rule for target.
+ur_msgs_generate_messages_cpp/fast:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/build
+.PHONY : ur_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/control_toolbox_generate_messages_eus.dir/rule:
@@ -331,36 +286,6 @@ control_toolbox_generate_messages_cpp: Universal_Robots_ROS_Driver/ur_robot_driv
 control_toolbox_generate_messages_cpp/fast:
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/control_toolbox_generate_messages_cpp.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/control_toolbox_generate_messages_cpp.dir/build
 .PHONY : control_toolbox_generate_messages_cpp/fast
-
-# Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_cpp: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-# Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-ur_msgs_generate_messages_cpp: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : ur_msgs_generate_messages_cpp
-
-# fast build rule for target.
-ur_msgs_generate_messages_cpp/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_cpp.dir/build
-.PHONY : ur_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/control_msgs_generate_messages_py.dir/rule:
@@ -513,66 +438,6 @@ pass_through_controllers_gencfg/fast:
 .PHONY : pass_through_controllers_gencfg/fast
 
 # Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_lisp: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
-
-# Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-cartesian_control_msgs_generate_messages_py: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/rule
-
-.PHONY : cartesian_control_msgs_generate_messages_py
-
-# fast build rule for target.
-cartesian_control_msgs_generate_messages_py/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/build
-.PHONY : cartesian_control_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_nodejs: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_srvs_generate_messages_nodejs
-
-# fast build rule for target.
-std_srvs_generate_messages_nodejs/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-.PHONY : std_srvs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_py: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_py.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
-# Convenience name for target.
 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_lisp.dir/rule:
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_lisp.dir/rule
 .PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_lisp.dir/rule
@@ -618,21 +483,6 @@ ur_msgs_generate_messages_py/fast:
 .PHONY : ur_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_eus: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-# Convenience name for target.
 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_cpp.dir/rule:
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_cpp.dir/rule
 .PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_cpp.dir/rule
@@ -646,51 +496,6 @@ cartesian_control_msgs_generate_messages_cpp: Universal_Robots_ROS_Driver/ur_rob
 cartesian_control_msgs_generate_messages_cpp/fast:
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_cpp.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_cpp.dir/build
 .PHONY : cartesian_control_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/rule
-
-# Convenience name for target.
-run_tests_ur_robot_driver_rostest_test_driver.test: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/rule
-
-.PHONY : run_tests_ur_robot_driver_rostest_test_driver.test
-
-# fast build rule for target.
-run_tests_ur_robot_driver_rostest_test_driver.test/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/build
-.PHONY : run_tests_ur_robot_driver_rostest_test_driver.test/fast
-
-# Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/rule
-
-# Convenience name for target.
-robot_state_helper: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/rule
-
-.PHONY : robot_state_helper
-
-# fast build rule for target.
-robot_state_helper/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/build
-.PHONY : robot_state_helper/fast
-
-# Convenience name for target.
-Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/rule:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/rule
-.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/rule
-
-# Convenience name for target.
-urcl_log_handler: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/rule
-
-.PHONY : urcl_log_handler
-
-# fast build rule for target.
-urcl_log_handler/fast:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/build
-.PHONY : urcl_log_handler/fast
 
 # Convenience name for target.
 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_msgs_generate_messages_eus.dir/rule:
@@ -738,6 +543,36 @@ cartesian_control_msgs_generate_messages_lisp/fast:
 .PHONY : cartesian_control_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
+Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/rule:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/rule
+.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/rule
+
+# Convenience name for target.
+ur_robot_driver_node: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/rule
+
+.PHONY : ur_robot_driver_node
+
+# fast build rule for target.
+ur_robot_driver_node/fast:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build
+.PHONY : ur_robot_driver_node/fast
+
+# Convenience name for target.
+Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/rule:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/rule
+.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/rule
+
+# Convenience name for target.
+_run_tests_ur_robot_driver: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/rule
+
+.PHONY : _run_tests_ur_robot_driver
+
+# fast build rule for target.
+_run_tests_ur_robot_driver/fast:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/_run_tests_ur_robot_driver.dir/build
+.PHONY : _run_tests_ur_robot_driver/fast
+
+# Convenience name for target.
 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_nodejs.dir/rule
 .PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_nodejs.dir/rule
@@ -751,6 +586,96 @@ cartesian_control_msgs_generate_messages_nodejs: Universal_Robots_ROS_Driver/ur_
 cartesian_control_msgs_generate_messages_nodejs/fast:
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_nodejs.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_nodejs.dir/build
 .PHONY : cartesian_control_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/rule:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/rule
+.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+cartesian_control_msgs_generate_messages_py: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/rule
+
+.PHONY : cartesian_control_msgs_generate_messages_py
+
+# fast build rule for target.
+cartesian_control_msgs_generate_messages_py/fast:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/cartesian_control_msgs_generate_messages_py.dir/build
+.PHONY : cartesian_control_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/rule:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/rule
+.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/rule
+
+# Convenience name for target.
+dashboard_client: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/rule
+
+.PHONY : dashboard_client
+
+# fast build rule for target.
+dashboard_client/fast:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/build
+.PHONY : dashboard_client/fast
+
+# Convenience name for target.
+Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/rule:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/rule
+.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/rule
+
+# Convenience name for target.
+run_tests_ur_robot_driver_rostest_test_driver.test: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/rule
+
+.PHONY : run_tests_ur_robot_driver_rostest_test_driver.test
+
+# fast build rule for target.
+run_tests_ur_robot_driver_rostest_test_driver.test/fast:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver_rostest_test_driver.test.dir/build
+.PHONY : run_tests_ur_robot_driver_rostest_test_driver.test/fast
+
+# Convenience name for target.
+Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/rule:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/rule
+.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/rule
+
+# Convenience name for target.
+urcl_log_handler: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/rule
+
+.PHONY : urcl_log_handler
+
+# fast build rule for target.
+urcl_log_handler/fast:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/urcl_log_handler.dir/build
+.PHONY : urcl_log_handler/fast
+
+# Convenience name for target.
+Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/rule:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/rule
+.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/rule
+
+# Convenience name for target.
+robot_state_helper: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/rule
+
+.PHONY : robot_state_helper
+
+# fast build rule for target.
+robot_state_helper/fast:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/robot_state_helper.dir/build
+.PHONY : robot_state_helper/fast
+
+# Convenience name for target.
+Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/rule:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/rule
+.PHONY : Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/rule
+
+# Convenience name for target.
+run_tests_ur_robot_driver: Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/rule
+
+.PHONY : run_tests_ur_robot_driver
+
+# fast build rule for target.
+run_tests_ur_robot_driver/fast:
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/run_tests_ur_robot_driver.dir/build
+.PHONY : run_tests_ur_robot_driver/fast
 
 src/dashboard_client_node.o: src/dashboard_client_node.cpp.o
 
@@ -785,9 +710,9 @@ src/dashboard_client_ros.o: src/dashboard_client_ros.cpp.o
 
 # target to build an object file
 src/dashboard_client_ros.cpp.o:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/src/dashboard_client_ros.cpp.o
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/dashboard_client_ros.cpp.o
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/src/dashboard_client_ros.cpp.o
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/dashboard_client_ros.cpp.o
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/src/dashboard_client_ros.cpp.o
 .PHONY : src/dashboard_client_ros.cpp.o
 
 src/dashboard_client_ros.i: src/dashboard_client_ros.cpp.i
@@ -796,9 +721,9 @@ src/dashboard_client_ros.i: src/dashboard_client_ros.cpp.i
 
 # target to preprocess a source file
 src/dashboard_client_ros.cpp.i:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/src/dashboard_client_ros.cpp.i
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/dashboard_client_ros.cpp.i
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/src/dashboard_client_ros.cpp.i
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/dashboard_client_ros.cpp.i
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/src/dashboard_client_ros.cpp.i
 .PHONY : src/dashboard_client_ros.cpp.i
 
 src/dashboard_client_ros.s: src/dashboard_client_ros.cpp.s
@@ -807,9 +732,9 @@ src/dashboard_client_ros.s: src/dashboard_client_ros.cpp.s
 
 # target to generate assembly for a file
 src/dashboard_client_ros.cpp.s:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/src/dashboard_client_ros.cpp.s
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/dashboard_client_ros.cpp.s
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/src/dashboard_client_ros.cpp.s
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/dashboard_client_ros.cpp.s
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/dashboard_client.dir/src/dashboard_client_ros.cpp.s
 .PHONY : src/dashboard_client_ros.cpp.s
 
 src/hardware_interface.o: src/hardware_interface.cpp.o
@@ -818,8 +743,8 @@ src/hardware_interface.o: src/hardware_interface.cpp.o
 
 # target to build an object file
 src/hardware_interface.cpp.o:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/hardware_interface.cpp.o
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/src/hardware_interface.cpp.o
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/hardware_interface.cpp.o
 .PHONY : src/hardware_interface.cpp.o
 
 src/hardware_interface.i: src/hardware_interface.cpp.i
@@ -828,8 +753,8 @@ src/hardware_interface.i: src/hardware_interface.cpp.i
 
 # target to preprocess a source file
 src/hardware_interface.cpp.i:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/hardware_interface.cpp.i
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/src/hardware_interface.cpp.i
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/hardware_interface.cpp.i
 .PHONY : src/hardware_interface.cpp.i
 
 src/hardware_interface.s: src/hardware_interface.cpp.s
@@ -838,8 +763,8 @@ src/hardware_interface.s: src/hardware_interface.cpp.s
 
 # target to generate assembly for a file
 src/hardware_interface.cpp.s:
-	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/hardware_interface.cpp.s
 	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_plugin.dir/src/hardware_interface.cpp.s
+	cd /home/snack/Documents/GitHub/Ur5project/catkin_ws/build && $(MAKE) -f Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/build.make Universal_Robots_ROS_Driver/ur_robot_driver/CMakeFiles/ur_robot_driver_node.dir/src/hardware_interface.cpp.s
 .PHONY : src/hardware_interface.cpp.s
 
 src/hardware_interface_node.o: src/hardware_interface_node.cpp.o
@@ -961,19 +886,15 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... clean_test_results_ur_robot_driver"
 	@echo "... _run_tests_ur_robot_driver_rostest_test_driver.test"
 	@echo "... _run_tests_ur_robot_driver_rostest"
 	@echo "... run_tests_ur_robot_driver_rostest"
-	@echo "... _run_tests_ur_robot_driver"
-	@echo "... run_tests_ur_robot_driver"
-	@echo "... dashboard_client"
-	@echo "... ur_robot_driver_node"
 	@echo "... control_toolbox_generate_messages_lisp"
+	@echo "... ur_msgs_generate_messages_cpp"
 	@echo "... control_toolbox_generate_messages_eus"
 	@echo "... control_toolbox_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... ur_msgs_generate_messages_cpp"
 	@echo "... control_msgs_generate_messages_py"
 	@echo "... control_msgs_generate_messages_nodejs"
 	@echo "... install/local"
@@ -985,23 +906,22 @@ help:
 	@echo "... control_msgs_generate_messages_cpp"
 	@echo "... ur_msgs_generate_messages_nodejs"
 	@echo "... pass_through_controllers_gencfg"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... cartesian_control_msgs_generate_messages_py"
-	@echo "... std_srvs_generate_messages_nodejs"
-	@echo "... test"
-	@echo "... std_srvs_generate_messages_py"
 	@echo "... ur_msgs_generate_messages_lisp"
 	@echo "... ur_robot_driver_plugin"
 	@echo "... ur_msgs_generate_messages_py"
-	@echo "... std_srvs_generate_messages_eus"
 	@echo "... cartesian_control_msgs_generate_messages_cpp"
-	@echo "... run_tests_ur_robot_driver_rostest_test_driver.test"
-	@echo "... robot_state_helper"
-	@echo "... urcl_log_handler"
 	@echo "... ur_msgs_generate_messages_eus"
 	@echo "... cartesian_control_msgs_generate_messages_eus"
 	@echo "... cartesian_control_msgs_generate_messages_lisp"
+	@echo "... ur_robot_driver_node"
+	@echo "... _run_tests_ur_robot_driver"
 	@echo "... cartesian_control_msgs_generate_messages_nodejs"
+	@echo "... cartesian_control_msgs_generate_messages_py"
+	@echo "... dashboard_client"
+	@echo "... run_tests_ur_robot_driver_rostest_test_driver.test"
+	@echo "... urcl_log_handler"
+	@echo "... robot_state_helper"
+	@echo "... run_tests_ur_robot_driver"
 	@echo "... src/dashboard_client_node.o"
 	@echo "... src/dashboard_client_node.i"
 	@echo "... src/dashboard_client_node.s"

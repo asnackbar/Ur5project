@@ -5,9 +5,11 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("realsense-ros/realsense2_description")
 subdirs("fmauch_universal_robot/universal_robots")
 subdirs("Universal_Robots_ROS_Driver/ur_dashboard_msgs")
 subdirs("Universal_Robots_ROS_Driver/controller_stopper")
+subdirs("realsense-ros/realsense2_camera")
 subdirs("fmauch_universal_robot/ur_description")
 subdirs("fmauch_universal_robot/ur_gazebo")
 subdirs("fmauch_universal_robot/ur_kinematics")
