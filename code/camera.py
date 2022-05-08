@@ -18,7 +18,7 @@ while True:
 
     cv2.imshow("Color frame", color_frame)
     cv2.waitKey(1) #press a key to save the image
-    cv2.imwrite('./out.png', color_frame)
+    cv2.imwrite('./image/out.png', color_frame)
    
     key = cv2.waitKey(1)
     if key == 27:
@@ -26,7 +26,7 @@ while True:
   #press esc to set correct picture
   
 # Read the original image
-img = cv2.imread('out.png')
+img = cv2.imread('./image/out.png')
 # Display original image
 cv2.imshow('Original', img)
 
@@ -54,10 +54,10 @@ edges = cv2.Canny(image=img_blur, threshold1=100, threshold2=200) # Canny Edge D
 # Display Canny Edge Detection Image
 cv2.imshow('Canny Edge Detection', edges)
 
-cv2.imwrite('./sobelxy.png', sobelxy)
-cv2.imwrite('./gray.png', img_gray)
-cv2.imwrite('./imageblur.png', img_blur)
-cv2.imwrite('./candy.png', edges)
+cv2.imwrite('./image/sobelxy.png', sobelxy)
+cv2.imwrite('./image/gray.png', img_gray)
+cv2.imwrite('./image/imageblur.png', img_blur)
+cv2.imwrite('./image//candy.png', edges)
 cv2.waitKey(0)
 
 cv2.destroyAllWindows()
