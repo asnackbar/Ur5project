@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot name="ur5">
+<xacro:include filename="package://fmauch_universal_robots/urdf/ur5.xacro" />
+<xacro:ur5_robot prefix="" joint_limited="true"/>
+<link name="table">
+  <visual>
+    <geometry>
+       <mesh filename="package://ur5uia/meshes/table.STL"/>
+    </geometry>
+  </visual>
+  <collision>
+    <geometry>
+      <mesh filename="package://ur5uia/meshes/table.dae"/>
+    </geometry>
+  </collision>
+   <origin rpy="0 0 0" xyz="0 0 0"/>
+</link>
+
+
+<joint name="table_to_robot" type="fixed">
+  <parent link="table"/>
+  <child link="base_link"/>
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+</joint>
+
+
+
+</robot>

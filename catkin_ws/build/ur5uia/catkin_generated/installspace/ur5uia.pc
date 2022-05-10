@@ -1,0 +1,8 @@
+prefix=/home/snack/Documents/GitHub/Ur5project/catkin_ws/install
+
+Name: ur5uia
+Description: Description of ur5uia
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
