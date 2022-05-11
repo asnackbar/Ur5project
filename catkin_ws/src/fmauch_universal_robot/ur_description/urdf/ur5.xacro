@@ -17,6 +17,12 @@
 
     Refer to 'inc/ur_macro.xacro' for more information.
  #   -->
+ <!--world link is added -->
+<link name="world">
+</link>
+
+
+<!--Tool link is added -->
 <link name="tool">
   <visual>
     <geometry>
@@ -30,7 +36,7 @@
   </collision>
    <origin rpy="0 0 0" xyz="0 0 0"/>
 </link>
-
+<!--Table link is added -->
 <link name="table">
   <origin rpy="-1.5708 0 0" xyz="0 0 0"/>
   <visual>
@@ -45,7 +51,11 @@
   </collision>
    
 </link>
-0
+<joint name="world_to_table" type="fixed">
+  <parent link="world"/>
+  <child link="table"/>
+  <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+</joint>
 <joint name="table_to_robot" type="fixed">
   <parent link="table"/>
   <child link="base_link"/>
