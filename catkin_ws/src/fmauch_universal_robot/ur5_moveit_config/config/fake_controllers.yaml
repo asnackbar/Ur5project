@@ -1,12 +1,17 @@
 controller_list:
-  - name: fake_stand_controller
+  - name: fake_ur5_arm_controller
     type: $(arg fake_execution_type)
     joints:
-      []
-  - name: fake_tool_controller
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+  - name: fake_hand_controller
     type: $(arg fake_execution_type)
     joints:
       []
 initial:  # Define initial robot poses per group
-  - group: tool
-    pose: top
+  - group: ur5_arm
+    pose: default

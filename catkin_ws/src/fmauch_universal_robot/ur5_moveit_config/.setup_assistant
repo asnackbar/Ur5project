@@ -4,8 +4,8 @@ moveit_setup_assistant_config:
     relative_path: urdf/ur5.xacro
     xacro_args: ""
   SRDF:
-    relative_path: config/ur5.srdf
+    relative_path: config/ur5_robot.srdf
   CONFIG:
-    author_name: Felix Exner
-    author_email: felix@fexner.de
-    generated_timestamp: 1611154369
+    author_name: Lyder hilton
+    author_email: lyderakh@gmail.com
+    generated_timestamp: 1652808408

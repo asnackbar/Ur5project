@@ -26,12 +26,12 @@
 <link name="tool">
   <visual>
     <geometry>
-       <mesh filename="package://ur5uia/meshes/finaltool.STL" scale="0.001 0.001 0.001"/>
+       <mesh filename="package://ur_description/meshes/ur5/collision/finaltool.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </visual>
   <collision>
     <geometry>
-      <mesh filename="package://ur5uia/meshes/finaltool.dae" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ur_description/meshes/ur5/visual/finaltool.dae" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
    <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -41,12 +41,12 @@
   <origin rpy="-1.5708 0 0" xyz="0 0 0"/>
   <visual>
     <geometry>
-       <mesh filename="package://ur5uia/meshes/table.STL" scale="0.001 0.001 0.001" rpy= "-1.5708 0 0"/>
+       <mesh filename="package://ur_description/meshes/ur5/collision/table.STL" scale="0.001 0.001 0.001" rpy= "-1.5708 0 0"/>
     </geometry>
   </visual>
   <collision>
     <geometry>
-      <mesh filename="package://ur5uia/meshes/table.dae" scale="0.001 0.001 0.001" origin= "-1.5708 0 0"/>
+      <mesh filename="package://ur_description/meshes/ur5/visual/table.dae" scale="0.001 0.001 0.001" origin= "-1.5708 0 0"/>
     </geometry>
   </collision>
    

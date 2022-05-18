@@ -127,7 +127,7 @@ planner_configs:
     sparse_delta_fraction: 0.25  # delta fraction for connection distance. This value represents the visibility range of sparse samples. default: 0.25
     dense_delta_fraction: 0.001  # delta fraction for interface detection. default: 0.001
     max_failures: 5000  # maximum consecutive failure limit. default: 5000
-stand:
+ur5_arm:
   planner_configs:
     - AnytimePathShortening
     - SBL
@@ -153,7 +153,7 @@ stand:
     - LazyPRMstar
     - SPARS
     - SPARStwo
-tool:
+hand:
   planner_configs:
     - AnytimePathShortening
     - SBL
